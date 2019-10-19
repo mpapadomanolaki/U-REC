@@ -16,7 +16,7 @@ csv_file_val = '../myxys_val.csv'
 image_ids = [11, 13, 1, 21, 23, 26, 28, 30, 32, 34, 37, 3, 5, 7] #train areas
 infer_ids = [15,17] #validation areas
 img_folder = '../top/' #folder with tif images of Vaihingen city
-lbl_folder = '../groundtruth/' #folder with 2D groundtruth images, category 
+lbl_folder = '../groundtruth/' #folder with 2D groundtruth tif images
              #see https://github.com/nshaud/DeepNetsForEO/blob/master/legacy/notebooks/convert_gt.py for
              #the conversion
 patch_size = 256
