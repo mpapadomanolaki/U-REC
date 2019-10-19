@@ -1,4 +1,4 @@
-# some functions are borrowed from https://github.com/milesial/Pytorch-UNet
+# functions are borrowed from https://github.com/milesial/Pytorch-UNet
 
 import torch
 import torch.nn as nn
