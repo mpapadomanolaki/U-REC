@@ -1,4 +1,3 @@
-#blabla
 from torch.utils.data.dataset import Dataset
 from skimage import io
 import numpy as np
