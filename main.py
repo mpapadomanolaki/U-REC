@@ -5,10 +5,7 @@ import numpy as np
 import torch
 import torch.optim as optim
 import torch.nn as nn
-from torch.autograd import Variable
-import torch.nn.functional as F
 from tqdm import tqdm
-import torch.optim.lr_scheduler
 import u_rec
 import torchnet as tnt
 import tools
