@@ -6,3 +6,5 @@ UNet and UREC networks were used to produce the accuracy results of the paper 'M
 If you find this code useful in your research, please consider citing:
 
 Maria Papadomanolaki, Konstantinos Karantzalos, Maria Vakalopoulou. A MULTI-TASK DEEP LEARNING FRAMEWORK COUPLING SEMANTIC SEGMENTATION AND IMAGE RECONSTRUCTION FOR VERY HIGH RESOLUTION IMAGERY
+
+https://hal.inria.fr/hal-02266085/document
