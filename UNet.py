@@ -1,5 +1,3 @@
-# full assembly of the sub-parts to form the complete net
-
 import torch.nn.functional as F
 
 from unet_parts import *
