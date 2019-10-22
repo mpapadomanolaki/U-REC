@@ -9,6 +9,8 @@ custom.py is the definition of the custom dataloader thet we used for the isprs 
 
 tools.py involves functions that are called in m ain.py during training.
 
+infer.py is used for evaluating the model on the testing images.
+
 If you find this code useful in your research, please consider citing:
 
 Maria Papadomanolaki, Konstantinos Karantzalos, Maria Vakalopoulou. A MULTI-TASK DEEP LEARNING FRAMEWORK COUPLING SEMANTIC SEGMENTATION AND IMAGE RECONSTRUCTION FOR VERY HIGH RESOLUTION IMAGERY
