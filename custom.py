@@ -12,7 +12,7 @@ class MyDataset(Dataset):
         self.X = self.data_info.iloc[:,0]
         # Second column is the labels
         self.Y = self.data_info.iloc[:,1]
-        # Third column is for an operation indicator
+        # Third column is the image ID
         self.IM_id = self.data_info.iloc[:,2]
 
         ###create image/label list
