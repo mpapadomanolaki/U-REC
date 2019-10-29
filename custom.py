@@ -25,8 +25,7 @@ class MyDataset(Dataset):
         x = int(self.data_info.iloc[index,0])
         y = int(self.data_info.iloc[index,1])
         image_id = int(self.data_info.iloc[index,2])
-
-        print(x,y,image_id)
+        
         image_patch = self.images[image_id] [x:x + self.patch_size, y:y + self.patch_size, :]
         image_patch = np.transpose(image_patch, (2,0,1))
         label_patch = self.labels[image_id] [x:x + self.patch_size, y:y + self.patch_size]
