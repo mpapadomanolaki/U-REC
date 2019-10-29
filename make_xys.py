@@ -8,7 +8,8 @@ import pandas as pd
 train_ids = [11, 13, 1, 21, 23, 26, 28, 30, 32, 34, 37, 3, 5, 7]
 infer_ids = [15,17]
 
-FOLDER='/home/mariapap/DATA/GROUNDTRUTH/ISPRS_semantic_labeling_Vaihingen_ground_truth_COMPLETE_1D/'
+FOLDER='../groundtruth_2D/' #folder with 2D groundtruth tif images. For conversion see
+                            # https://github.com/nshaud/DeepNetsForEO/blob/master/legacy/notebooks/convert_gt.py
 
 step=64
 patch_s=256
@@ -63,7 +64,7 @@ df = pd.DataFrame({'X': list(final_cities[:,0]),
                    'Y': list(final_cities[:,1]),
                    'image_ID': list(final_cities[:,2]),
                    })
-df.to_csv('./xys/myxys_train.csv', index=False, columns=["X", "Y", "image_ID"])
+df.to_csv('../myxys_train.csv', index=False, columns=["X", "Y", "image_ID"])
 
 #####################################################################
 
@@ -83,4 +84,4 @@ df = pd.DataFrame({'X': list(final_cities[:,0]),
                    'Y': list(final_cities[:,1]),
                    'image_ID': list(final_cities[:,2]),
                    })
-df.to_csv('./xys/myxys_val.csv', index=False, columns=["X", "Y", "image_ID"])
+df.to_csv('../myxys_val.csv', index=False, columns=["X", "Y", "image_ID"])
