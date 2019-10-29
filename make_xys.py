@@ -24,7 +24,7 @@ def sliding_window(i_city, ss, labeled_areas, label, window_size, step):
      while(y!=label.shape[1]):
 
                if (not y+window_size > label.shape[1]) and (not x+window_size > label.shape[0]):
-                line=np.array([x,y, 7000+labeled_areas.index(ss)])
+                line=np.array([x,y, labeled_areas.index(ss)])
                 city.append(line)
                 stride=step
 
@@ -59,12 +59,12 @@ for i in train_ids:
  cities.append(xy_city)
 
 final_cities = np.concatenate(cities, axis=0)
-
 df = pd.DataFrame({'X': list(final_cities[:,0]),
                    'Y': list(final_cities[:,1]),
                    'image_ID': list(final_cities[:,2]),
                    })
-df.to_csv('../myxys.csv', index=False)
+df.to_csv('./xys/myxys_train.csv', index=False, columns=["X", "Y", "image_ID"])
+#np.save('./xys/xys_train.npy', final_cities)
 
 #####################################################################
 
@@ -84,5 +84,6 @@ df = pd.DataFrame({'X': list(final_cities[:,0]),
                    'Y': list(final_cities[:,1]),
                    'image_ID': list(final_cities[:,2]),
                    })
-df.to_csv('../myxys_val.csv', index=False)
+df.to_csv('./xys/myxys_val.csv', index=False, columns=["X", "Y", "image_ID"])
 
+#np.save('./xys/xys_val.npy', final_cities)
