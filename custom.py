@@ -7,7 +7,7 @@ class MyDataset(Dataset):
     def __init__(self, csv_path, image_ids, image_folder, label_folder, patch_size):
         # Read the csv file and shuffle it
         self.data_info = pd.read_csv(csv_path, header=None)
-        self.data_info = self.data_info.iloc[np.random.permutation(len(self.data_info))]
+        self.data_info = self.data_info.iloc[np.random.permutation(len(self.data_info))] #shuffle
 
         ###create image/label list
         self.images = []
