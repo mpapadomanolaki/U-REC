@@ -65,7 +65,7 @@ def sliding_window(IMAGE, patch_size, step):
     return final_pred
 
 model=u_rec.UNet(3,6)
-model.load_state_dict(torch.load('./models/model_2.pt'))
+model.load_state_dict(torch.load('../models/model.pt')) #load your saved weights
 model = tools.to_cuda(model)
 model = model.eval()
 infer_ids=[10,12,14,16,20,22,24,27,29,2,31,33,35,38,4,6,8]
