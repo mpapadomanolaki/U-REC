@@ -64,7 +64,6 @@ df = pd.DataFrame({'X': list(final_cities[:,0]),
                    'image_ID': list(final_cities[:,2]),
                    })
 df.to_csv('./xys/myxys_train.csv', index=False, columns=["X", "Y", "image_ID"])
-#np.save('./xys/xys_train.npy', final_cities)
 
 #####################################################################
 
@@ -85,5 +84,3 @@ df = pd.DataFrame({'X': list(final_cities[:,0]),
                    'image_ID': list(final_cities[:,2]),
                    })
 df.to_csv('./xys/myxys_val.csv', index=False, columns=["X", "Y", "image_ID"])
-
-#np.save('./xys/xys_val.npy', final_cities)
