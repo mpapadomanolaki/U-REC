@@ -6,8 +6,7 @@ import pandas as pd
 class MyDataset(Dataset):
     def __init__(self, csv_path, image_ids, image_folder, label_folder, patch_size):
         # Read the csv file and shuffle it
-        self.data_info = pd.read_csv(csv_path, header=None)
-        self.data_info = self.data_info.iloc[np.random.permutation(len(self.data_info))] #shuffle
+        self.data_info = pd.read_csv(csv_path)
 
         ###create image/label list
         self.images = []
@@ -25,7 +24,7 @@ class MyDataset(Dataset):
         x = int(self.data_info.iloc[index,0])
         y = int(self.data_info.iloc[index,1])
         image_id = int(self.data_info.iloc[index,2])
-        
+
         image_patch = self.images[image_id] [x:x + self.patch_size, y:y + self.patch_size, :]
         image_patch = np.transpose(image_patch, (2,0,1))
         label_patch = self.labels[image_id] [x:x + self.patch_size, y:y + self.patch_size]
@@ -34,3 +33,4 @@ class MyDataset(Dataset):
 
     def __len__(self):
         return self.data_len
+
