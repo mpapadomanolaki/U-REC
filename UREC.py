@@ -137,7 +137,7 @@ class UNet(nn.Module):
         m = self.final_block(m)
         m = self.outconv(m)
 
-        return F.log_softmax(m)
+        return m
 
 
     def rec(self, x_mp):
