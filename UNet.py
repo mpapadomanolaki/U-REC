@@ -94,7 +94,7 @@ class UNet(nn.Module):
 
         return x1,x2,x3,x4,x5,x_mp
 
-    def decoder_segm(self, x1,x2,x3,x4,x5):
+    def decoder_segm(self, x1,x2,x3,x4,x5,x_mp):
 
         m = self.D_conv_1(x_mp)
         m = self.D_up_1(m)
@@ -136,39 +136,7 @@ class UNet(nn.Module):
     def forward(self, x):
 
         x1,x2,x3,x4,x5,x_mp=self.encode(x)  ##input1  !!
+ 
+        segm = self.decoder_segm(x1,x2,x3,x4,x5,x_mp)
 
-        m = self.D_conv_1(x_mp)
-        m = self.D_up_1(m)
-        m = torch.cat((m,x5), 1)
-
-        m = self.D_conv_2_1(m)
-        m = self.D_conv_2_2(m)
-        m = self.D_conv_2_3(m)
-        m = self.D_conv_2_4(m)
-        m = self.D_up_2(m)
-        m = torch.cat((m,x4), 1)
-
-        m = self.D_conv_3_1(m)
-        m = self.D_conv_3_2(m)
-        m = self.D_conv_3_3(m)
-        m = self.D_conv_3_4(m)
-        m = self.D_up_3(m)
-        m = torch.cat((m,x3), 1)
-
-        m = self.D_conv_4_1(m)
-        m = self.D_conv_4_2(m)
-        m = self.D_conv_4_3(m)
-        m = self.D_conv_4_4(m)
-        m = self.D_up_4(m)
-        m = torch.cat((m,x2), 1)
-
-        m = self.D_conv_5_1(m)
-        m = self.D_conv_5_2(m)
-        m = self.D_conv_5_3(m)
-        m = self.D_up_5(m)
-        m = torch.cat((m,x1), 1)
-
-        m = self.final_block(m)
-        m = self.outconv(m)
-
-        return m
+        return segm
