@@ -94,7 +94,7 @@ class UNet(nn.Module):
 
         return x1,x2,x3,x4,x5,x_mp
 
-    def decoder_segm(self, x1,x2,x3,x4,x5,x_mp):
+    def decode(self, x1,x2,x3,x4,x5,x_mp):
 
         m = self.D_conv_1(x_mp)
         m = self.D_up_1(m)
@@ -137,6 +137,6 @@ class UNet(nn.Module):
 
         x1,x2,x3,x4,x5,x_mp=self.encode(x)  ##input1  !!
  
-        segm = self.decoder_segm(x1,x2,x3,x4,x5,x_mp)
+        segm = self.decode(x1,x2,x3,x4,x5,x_mp)
 
         return segm
